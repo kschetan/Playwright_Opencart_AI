@@ -1,40 +1,44 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "cart_api_schema.json",
-  "title": "Fake Store API cart response",
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "integer",
-      "minimum": 1
-    },
-    "userId": {
-      "type": "integer",
-      "minimum": 1
-    },
-    "date": {
-      "type": "string",
-      "minLength": 1
-    },
-    "products": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "productId": {
-            "type": "integer",
-            "minimum": 1
-          },
-          "quantity": {
-            "type": "integer",
-            "minimum": 1
-          }
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Generated schema for Root",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "number"
         },
-        "required": ["productId", "quantity"],
-        "additionalProperties": true
-      }
-    }
-  },
-  "required": ["id", "userId", "date", "products"],
-  "additionalProperties": true
+        "userId": {
+            "type": "number"
+        },
+        "date": {
+            "type": "string"
+        },
+        "products": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "productId": {
+                        "type": "number"
+                    },
+                    "quantity": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "productId",
+                    "quantity"
+                ]
+            }
+        },
+        "__v": {
+            "type": "number"
+        }
+    },
+    "required": [
+        "id",
+        "userId",
+        "date",
+        "products",
+        "__v"
+    ]
 }

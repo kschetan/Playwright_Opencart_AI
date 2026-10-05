@@ -1,48 +1,47 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "product_api_schema.json",
-  "title": "Fake Store API product response",
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "integer",
-      "minimum": 1
-    },
-    "title": {
-      "type": "string",
-      "minLength": 1
-    },
-    "price": {
-      "type": "number",
-      "minimum": 0
-    },
-    "description": {
-      "type": "string"
-    },
-    "category": {
-      "type": "string",
-      "minLength": 1
-    },
-    "image": {
-      "type": "string",
-      "minLength": 1
-    },
-    "rating": {
-      "type": "object",
-      "properties": {
-        "rate": {
-          "type": "number",
-          "minimum": 0
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
         },
-        "count": {
-          "type": "integer",
-          "minimum": 0
+        "title": {
+            "type": "string"
+        },
+        "price": {
+            "type": "number"
+        },
+        "description": {
+            "type": "string"
+        },
+        "category": {
+            "type": "string"
+        },
+        "image": {
+            "type": "string"
+        },
+        "rating": {
+            "type": "object",
+            "properties": {
+                "rate": {
+                    "type": "number"
+                },
+                "count": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "rate",
+                "count"
+            ]
         }
-      },
-      "required": ["rate", "count"],
-      "additionalProperties": true
-    }
-  },
-  "required": ["id", "title", "price", "description", "category", "image", "rating"],
-  "additionalProperties": true
+    },
+    "required": [
+        "id",
+        "title",
+        "price",
+        "description",
+        "category",
+        "image",
+        "rating"
+    ]
 }

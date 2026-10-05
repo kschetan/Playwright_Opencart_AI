@@ -1,82 +1,89 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "user_api_schema.json",
-  "title": "Fake Store API user response",
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "integer",
-      "minimum": 1
-    },
-    "email": {
-      "type": "string",
-      "minLength": 1
-    },
-    "username": {
-      "type": "string",
-      "minLength": 1
-    },
-    "password": {
-      "type": "string",
-      "minLength": 1
-    },
-    "name": {
-      "type": "object",
-      "properties": {
-        "firstname": {
-          "type": "string",
-          "minLength": 1
-        },
-        "lastname": {
-          "type": "string",
-          "minLength": 1
-        }
-      },
-      "required": ["firstname", "lastname"],
-      "additionalProperties": true
-    },
-    "address": {
-      "type": "object",
-      "properties": {
-        "geolocation": {
-          "type": "object",
-          "properties": {
-            "lat": {
-              "type": "string",
-              "minLength": 1
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Generated schema for Root",
+    "type": "object",
+    "properties": {
+        "address": {
+            "type": "object",
+            "properties": {
+                "geolocation": {
+                    "type": "object",
+                    "properties": {
+                        "lat": {
+                            "type": "string"
+                        },
+                        "long": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "lat",
+                        "long"
+                    ]
+                },
+                "city": {
+                    "type": "string"
+                },
+                "street": {
+                    "type": "string"
+                },
+                "number": {
+                    "type": "number"
+                },
+                "zipcode": {
+                    "type": "string"
+                }
             },
-            "long": {
-              "type": "string",
-              "minLength": 1
-            }
-          },
-          "required": ["lat", "long"],
-          "additionalProperties": true
+            "required": [
+                "geolocation",
+                "city",
+                "street",
+                "number",
+                "zipcode"
+            ]
         },
-        "city": {
-          "type": "string",
-          "minLength": 1
+        "id": {
+            "type": "number"
         },
-        "street": {
-          "type": "string",
-          "minLength": 1
+        "email": {
+            "type": "string"
         },
-        "number": {
-          "type": "integer"
+        "username": {
+            "type": "string"
         },
-        "zipcode": {
-          "type": "string",
-          "minLength": 1
+        "password": {
+            "type": "string"
+        },
+        "name": {
+            "type": "object",
+            "properties": {
+                "firstname": {
+                    "type": "string"
+                },
+                "lastname": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "firstname",
+                "lastname"
+            ]
+        },
+        "phone": {
+            "type": "string"
+        },
+        "__v": {
+            "type": "number"
         }
-      },
-      "required": ["geolocation", "city", "street", "number", "zipcode"],
-      "additionalProperties": true
     },
-    "phone": {
-      "type": "string",
-      "minLength": 1
-    }
-  },
-  "required": ["id", "email", "username", "password", "name", "address", "phone"],
-  "additionalProperties": true
+    "required": [
+        "address",
+        "id",
+        "email",
+        "username",
+        "password",
+        "name",
+        "phone",
+        "__v"
+    ]
 }
